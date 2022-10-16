@@ -1,3 +1,5 @@
+import { StatisticsItem, StatisticsList } from './Statistics.styled';
+
 export const Statistics = ({
   good,
   neutral,
@@ -8,13 +10,15 @@ export const Statistics = ({
   return (
     <div>
       <h3>Statistics</h3>
-      <div>
-        <span>Good: {good}</span>
-        <span>Neutral: {neutral}</span>
-        <span>Bad: {bad}</span>
-        <span>Total: {totalFeedback}</span>
-        <span>Positive feedback: {positiveFeedbackPercentage || 0} %</span>
-      </div>
+      <StatisticsList>
+        <StatisticsItem>Good: {good}</StatisticsItem>
+        <StatisticsItem>Neutral: {neutral}</StatisticsItem>
+        <StatisticsItem>Bad: {bad}</StatisticsItem>
+        <StatisticsItem>Total: {totalFeedback}</StatisticsItem>
+        <StatisticsItem>
+          Positive feedback: {positiveFeedbackPercentage || 0} %
+        </StatisticsItem>
+      </StatisticsList>
     </div>
   );
 };
